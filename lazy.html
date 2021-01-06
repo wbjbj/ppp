@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    img {
+        width: 500px;
+        height: 300px;
+        margin: 50px;
+    }
+</style>
+
+<body>
+    <div>
+        <img class="img-lazy"
+            data-src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=114041594,3904337791&fm=26&gp=0.jpg">
+        <!-- 设置需要懒加载的图片类名为img-lazy，并将真实路径放在data-src中（data-src不影响src显示） -->
+        <img class="img-lazy"
+            data-src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3840490379,2111467544&fm=26&gp=0.jpg">
+        <img class="img-lazy"
+            data-src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1547804754,4188005646&fm=26&gp=0.jpg">
+        <img class="img-lazy"
+            data-src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1732023119,3027417980&fm=26&gp=0.jpg">
+        <img class="img-lazy"
+            data-src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=114041594,3904337791&fm=26&gp=0.jpg">
+        <img class="img-lazy"
+            data-src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3840490379,2111467544&fm=26&gp=0.jpg">
+        <img class="img-lazy"
+            data-src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1547804754,4188005646&fm=26&gp=0.jpg">
+        <img class="img-lazy"
+            data-src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1732023119,3027417980&fm=26&gp=0.jpg">
+        <img class="img-lazy"
+            data-src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=114041594,3904337791&fm=26&gp=0.jpg">
+        <img class="img-lazy"
+            data-src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3840490379,2111467544&fm=26&gp=0.jpg">
+        <img class="img-lazy"
+            data-src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1547804754,4188005646&fm=26&gp=0.jpg">
+        <img class="img-lazy"
+            data-src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1732023119,3027417980&fm=26&gp=0.jpg">
+        <img class="img-lazy"
+            data-src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=114041594,3904337791&fm=26&gp=0.jpg">
+        <img class="img-lazy"
+            data-src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3840490379,2111467544&fm=26&gp=0.jpg">
+        <img class="img-lazy"
+            data-src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1547804754,4188005646&fm=26&gp=0.jpg">
+    </div>
+    <div>
+        <img class="img-lazy"
+            data-src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=114041594,3904337791&fm=26&gp=0.jpg">
+        <img class="img-lazy"
+            data-src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3840490379,2111467544&fm=26&gp=0.jpg">
+        <img class="img-lazy"
+            data-src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1547804754,4188005646&fm=26&gp=0.jpg">
+        <img class="img-lazy"
+            data-src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1732023119,3027417980&fm=26&gp=0.jpg">
+        <img class="img-lazy"
+            data-src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=114041594,3904337791&fm=26&gp=0.jpg">
+        <img class="img-lazy"
+            data-src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3840490379,2111467544&fm=26&gp=0.jpg">
+        <img class="img-lazy"
+            data-src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1547804754,4188005646&fm=26&gp=0.jpg">
+        <img class="img-lazy"
+            data-src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1732023119,3027417980&fm=26&gp=0.jpg">
+        <img class="img-lazy"
+            data-src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=114041594,3904337791&fm=26&gp=0.jpg">
+        <img class="img-lazy"
+            data-src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3840490379,2111467544&fm=26&gp=0.jpg">
+        <img class="img-lazy"
+            data-src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1547804754,4188005646&fm=26&gp=0.jpg">
+        <img class="img-lazy"
+            data-src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1732023119,3027417980&fm=26&gp=0.jpg">
+        <img class="img-lazy"
+            data-src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=114041594,3904337791&fm=26&gp=0.jpg">
+        <img class="img-lazy"
+            data-src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3840490379,2111467544&fm=26&gp=0.jpg">
+        <img class="img-lazy"
+            data-src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1547804754,4188005646&fm=26&gp=0.jpg">
+    </div>
+</body>
+<script>
+    let actionsPosition = -300; //设置图片预加载，提前加载则设置值为正数，延迟加载设置负数
+    //（此教程为了体现懒加载，设置延迟加载，正常情况为了用户体验，请使用提前加载）
+    let activesImgs = document.querySelectorAll('.img-lazy') //获取所有需要懒加载的图片（添加img-lazy类名的图片）
+    console.log(activesImgs); //打印获取到的图片，可以找到setdata属性，里面src存放的是真正的图片地址
+    function lazyLoad() { //定义图片加载方法
+        activesImgs.forEach(item => { //遍历需要懒加载的图片
+            if (item.offsetTop < window.innerHeight + window.pageYOffset +
+                actionsPosition) { //图片距离页面顶部的距离<窗口可视区域高度+窗口上方到页面顶部的距离+预设的图片预加载高度
+                item.src = item.dataset.src; //即，当图片出现在窗口一定距离/即将进入窗口时，将图片设置的data-src转化为src
+                //src通过img.src设置；data-src可通过img.dataset.src获取
+            }
+        })
+    }
+    lazyLoad(); //第一次加载时显示窗口中的图片
+    window.onscroll = function () { //窗口滚动事件
+        var t = document.documentElement.scrollTop; //获取滚动大小
+        if (t >= 300) { //当滚动超过设置的大小时，执行图片加载方法（防止图片加载方法高频触发，影响性能）
+            lazyLoad();
+        }
+    }
+    window.onresize = function () { //窗口大小改变事件
+        lazyLoad();
+    }
+</script>
+
+</html>

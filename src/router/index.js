@@ -1,29 +1,67 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
 
 Vue.use(VueRouter)
 
-const routes = [
-  {
+const routes = [{
+    path: '*',
+    redirect: '/'
+}, {
     path: '/',
+    name: 'Layout',
+    component: () => import('../components/Layout'),
+    redirect: '/home'
+}, {
+    path: '/home',
     name: 'Home',
-    component: Home
-  },
-  {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  }
-]
+    component: () => import('../components/Layout'),
+    children: [{
+        path: '/',
+        component: () => import('../views/Home')
+    }]
+}, {
+    path: '/photo',
+    name: 'Photo',
+    component: () => import('../components/Layout'),
+    children: [{
+        path: '/',
+        component: () => import('../views/Photo')
+    }, {
+        path: 'main',
+        component: () => import('../views/Photo/photoMessage.vue')
+    }]
+}, {
+    path: '/sweet',
+    name: 'Sweet',
+    component: () => import('../components/Layout'),
+    children: [{
+        path: '/',
+        component: () => import('../views/Sweet')
+    }]
+}, {
+    path: '/user',
+    name: 'User',
+    component: () => import('../components/Layout'),
+    children: [{
+        path: '/',
+        component: () => import('../views/User')
+    }]
+}, {
+    path: '/login',
+    name: 'Login',
+    component: () => import('../components/Login')
+}]
 
 const router = new VueRouter({
-  mode: 'history',
-  base: process.env.BASE_URL,
-  routes
+    mode: 'hash',
+    base: process.env.BASE_URL,
+    routes
+})
+
+router.beforeEach((to, from, next) => {
+    if (sessionStorage.getItem('login') && to.path == '/login') next('/')
+    if (!sessionStorage.getItem('login') && to.path != '/login') next('/login')
+    next()
 })
 
 export default router
