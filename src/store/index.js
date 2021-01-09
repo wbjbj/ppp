@@ -5,14 +5,21 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
     state: {
-        login: true
+        messages: []
     },
     mutations: {
-        loginOn(state) {
-            state.login = true
+        addMessages(state, val) {
+            state.messages = state.messages.concat(val)
         },
-        loginOut(state){
-            state.login = false
+        updateMessage(state, val) {
+            state.messages[val.index] = val.message
+        },
+        removeMessage(state, index) {
+            state.messages.splice(index, 1)
+        },
+        changePosition(state, val) {
+            state.messages[val.index].positionX = val.positionX
+            state.messages[val.index].positionY = val.positionY
         }
     },
     actions: {},

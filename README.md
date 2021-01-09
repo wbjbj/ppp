@@ -1,4 +1,4 @@
-# lxy-zym
+# exam_z
 
 ## Project setup
 ```

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>移动端拖拽</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .container {
+            margin: auto;
+            height: calc(100vh - 2px);
+            overflow: hidden;
+            border: thin solid #000;
+            position: relative;
+        }
+
+        .target {
+            width: 200px;
+            height: 200px;
+            background: lightcoral;
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="target"></div>
+    </div>
+
+    <script>
+        window.onload = function () {
+            var maxW = document.documentElement.clientWidth;
+            var maxH = document.documentElement.clientHeight;
+            document.querySelector('.container').style.width = maxW;
+            var target = document.querySelector('.target');
+            var startX = 0;
+            var startY = 0;
+            target.addEventListener('touchstart', function (e) {
+                startX = e.targetTouches[0].pageX - this.offsetLeft;
+                startY = e.targetTouches[0].pageY - this.offsetTop;
+            });
+            target.addEventListener('touchmove', function (e) {
+                var leftX = e.targetTouches[0].pageX - startX;
+                var topY = e.targetTouches[0].pageY - startY;
+                var thisW = e.targetTouches[0].target.clientWidth;
+                var parentW = e.targetTouches[0].target.offsetParent.clientWidth;
+                var thisH = e.targetTouches[0].target.clientHeight;
+                var parentH = e.targetTouches[0].target.offsetParent.clientHeight;
+                if (leftX <= 0) {
+                    leftX = 0;
+                }
+                if (leftX >= parentW - thisW) {
+                    leftX = parentW - thisW;
+                }
+                if (topY <= 0) {
+                    topY = 0;
+                }
+                if (topY >= parentH - thisH) {
+                    topY = parentH - thisH;
+                }
+                this.style.left = leftX + 'px';
+                this.style.top = topY + 'px';
+            });
+        };
+    </script>
+
+</body>
+
+</html>

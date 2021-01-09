@@ -4,64 +4,24 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
 const routes = [{
-    path: '*',
-    redirect: '/'
-}, {
-    path: '/',
-    name: 'Layout',
-    component: () => import('../components/Layout'),
-    redirect: '/home'
-}, {
-    path: '/home',
-    name: 'Home',
-    component: () => import('../components/Layout'),
-    children: [{
         path: '/',
-        component: () => import('../views/Home')
-    }]
-}, {
-    path: '/photo',
-    name: 'Photo',
-    component: () => import('../components/Layout'),
-    children: [{
-        path: '/',
-        component: () => import('../views/Photo')
-    }, {
-        path: 'main',
-        component: () => import('../views/Photo/photoMessage.vue')
-    }]
-}, {
-    path: '/sweet',
-    name: 'Sweet',
-    component: () => import('../components/Layout'),
-    children: [{
-        path: '/',
-        component: () => import('../views/Sweet')
-    }]
-}, {
-    path: '/user',
-    name: 'User',
-    component: () => import('../components/Layout'),
-    children: [{
-        path: '/',
-        component: () => import('../views/User')
-    }]
-}, {
-    path: '/login',
-    name: 'Login',
-    component: () => import('../components/Login')
-}]
+        name: 'Login',
+        component: () => import('../views/login.vue')
+    },
+    {
+        path: '/home',
+        name: 'Home',
+        // route level code-splitting
+        // this generates a separate chunk (about.[hash].js) for this route
+        // which is lazy-loaded when the route is visited.
+        component: () => import( /* webpackChunkName: "about" */ '../views/home.vue')
+    }
+]
 
 const router = new VueRouter({
-    mode: 'hash',
+    mode: 'history',
     base: process.env.BASE_URL,
     routes
-})
-
-router.beforeEach((to, from, next) => {
-    if (sessionStorage.getItem('login') && to.path == '/login') next('/')
-    if (!sessionStorage.getItem('login') && to.path != '/login') next('/login')
-    next()
 })
 
 export default router
